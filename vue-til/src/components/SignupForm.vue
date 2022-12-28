@@ -35,7 +35,6 @@
     },
     methods: {
       async submitForm() {
-        console.log("form sended");
         const userData = {
           username: this.username,
           password: this.password,
