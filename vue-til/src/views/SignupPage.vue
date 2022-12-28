@@ -1,5 +1,7 @@
 <template>
-  <div>demo</div>
+  <div>
+    signup
+  </div>
 </template>
 
 <script>

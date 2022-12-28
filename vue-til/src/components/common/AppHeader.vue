@@ -1,19 +1,12 @@
 <template>
-  <div>
-    <div>header</div>
-    <demo-basic></demo-basic>
-  </div>
+  <div>header</div>
 </template>
 
 <script>
-  // import Demo from "../../demo/basic/Demo.vue";
-  import DemoBasic from "@/demo/basic/DemoBasic.vue";
+  //   import Demo from "../../demo/basic/Demo";
+  import Demo from "@/demo/basic/Demo";
 
-  export default {
-    components: {
-      DemoBasic,
-    },
-  };
+  export default {};
 </script>
 
 <style></style>

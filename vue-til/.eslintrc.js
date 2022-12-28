@@ -3,14 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: [
-    "plugin:vue/essential",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
-  ],
-  parserOptions: {
-    parser: "@babel/eslint-parser",
-  },
+  extends: ["plugin:vue/essential", "@vue/prettier"],
   rules: {
     "no-console": "off",
     // "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -35,7 +28,7 @@ module.exports = {
         singleQuote: false, // 'string' 사용 여부
         quoteProps: "consistent", // 객체 property의 따옴표 여부
         bracketSpacing: true, // Object literal에 띄어쓰기 사용 여부 (ex: { foo: bar })
-        endOfLine: "lf", // 라인 엔딩 지정
+        endOfLine: "auto", // 라인 엔딩 지정
         arrowParens: "avoid", // 화살표 함수 괄호 사용 방식
         htmlWhitespaceSensitivity: "css", // HTML 공백 감도 설정
         jsxBracketSameLine: false, // JSX의 마지막 `>`를 다음 줄로 내릴지 여부
@@ -59,6 +52,9 @@ module.exports = {
         ], // 특정 파일별로 옵션을 다르게 지정함, ESLint 방식 사용
       },
     ],
+  },
+  parserOptions: {
+    parser: "babel-eslint",
   },
   overrides: [
     {
