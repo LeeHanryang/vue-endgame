@@ -62,7 +62,9 @@
           // business logic
           const { data } = await loginUser(userData);
           console.log(data);
+          this.$store.commit("setUsername", data.user.nickname);
           this.logMessage = `${data.user.nickname}님 환영합니다.`;
+          this.$router.push("/main");
           //   this.initForm();
         } catch (error) {
           //   error handling
