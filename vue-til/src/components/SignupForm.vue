@@ -15,7 +15,7 @@
           <label for="password">패스워드: </label>
           <input
             id="password"
-            type="text"
+            type="password"
             v-model="password"
             autocomplete="off"
           />

@@ -4,7 +4,12 @@
       <form @submit.prevent="submitForm" class="form">
         <div>
           <label for="username">아이디:</label>
-          <input id="username" type="text" v-model="username" />
+          <input
+            id="username"
+            type="text"
+            v-model="username"
+            autocomplete="off"
+          />
           <p class="validation-text">
             <span class="warning" v-if="!isUsernameValid && username">
               Please enter an email address
@@ -13,7 +18,7 @@
         </div>
         <div>
           <label for="password">패스워드:</label>
-          <input id="password" type="text" v-model="password" />
+          <input id="password" type="password" v-model="password" />
         </div>
         <button
           class="btn"
