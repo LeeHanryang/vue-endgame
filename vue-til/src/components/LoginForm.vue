@@ -61,16 +61,13 @@
         try {
           // business logic
           const { data } = await loginUser(userData);
-          console.log(data);
+          console.log(data.token);
           this.$store.commit("setUsername", data.user.nickname);
-          this.logMessage = `${data.user.nickname}님 환영합니다.`;
           this.$router.push("/main");
-          //   this.initForm();
         } catch (error) {
           //   error handling
           console.log(error.response.data);
           this.logMessage = error.response.data;
-          //   this.initForm();
         } finally {
           this.initForm();
         }
