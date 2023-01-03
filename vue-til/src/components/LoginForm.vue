@@ -62,10 +62,11 @@
           // business logic
           const { data } = await loginUser(userData);
           console.log(data.token);
-          this.$store.commit("setUsername", data.user.nickname);
+          this.$store.commit("setToken", data.token);
+          this.$store.commit("setUsername", data.user.username);
           this.$router.push("/main");
         } catch (error) {
-          //   error handling
+          // error handling
           console.log(error.response.data);
           this.logMessage = error.response.data;
         } finally {
