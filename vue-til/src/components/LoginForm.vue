@@ -34,9 +34,7 @@
 </template>
 
 <script>
-  import { loginUser } from "@/api/index";
   import { validateEmail } from "@/utils/validation";
-  import { saveAuthToCookie, saveUserToCookie } from "@/utils/cookies";
 
   export default {
     data() {
@@ -60,13 +58,7 @@
           password: this.password,
         };
         try {
-          // business logic
-          const { data } = await loginUser(userData);
-          console.log(data.token);
-          this.$store.commit("setToken", data.token);
-          this.$store.commit("setUsername", data.user.username);
-          saveAuthToCookie(data.token);
-          saveUserToCookie(data.user.username);
+          await this.$store.dispatch("LOGIN", userData); // await 안붙이면 로그인처리 끝나기 전에 main 이동
           this.$router.push("/main");
         } catch (error) {
           // error handling
