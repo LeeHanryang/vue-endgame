@@ -5,7 +5,7 @@
       <form class="form" @submit.prevent="submitForm">
         <div>
           <label for="title">Title: </label>
-          <input type="text" id="title" v-model="title" />
+          <input type="text" id="title" v-model="title" ref="onFocus" />
         </div>
         <div>
           <label for="contents">Contents: </label>
@@ -48,6 +48,9 @@
         return this.contents.length <= 200;
       },
     },
+    mounted() {
+      this.focusInput();
+    },
     methods: {
       async submitForm() {
         try {
@@ -61,6 +64,9 @@
           this.logMessage = error.response.data.message;
           console.log(error);
         }
+      },
+      focusInput() {
+        this.$refs.onFocus.focus();
       },
     },
   };

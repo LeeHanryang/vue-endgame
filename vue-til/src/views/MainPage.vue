@@ -8,12 +8,13 @@
           v-for="postItem in postItems"
           :key="postItem._id"
           :postItem="postItem"
+          @refresh="fetchData"
         >
         </post-list-item>
       </ul>
     </div>
     <router-link to="/add" class="create-button">
-      <i class="fa-solid fa-plus fa-3x"></i>
+      <i class="ion-md-add"></i>
     </router-link>
   </div>
 </template>
