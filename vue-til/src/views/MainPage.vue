@@ -20,7 +20,7 @@
 
 <script>
   import PostListItem from "@/components/posts/PostListItem";
-  import { fetchPosts } from "@/api/index";
+  import { fetchPosts } from "@/api/posts";
   import LoadingSpinner from "@/components/common/LoadingSpinner";
 
   export default {
