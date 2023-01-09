@@ -3,8 +3,15 @@ import LoginForm from "./LoginForm";
 
 describe("LoginForm", () => {
   test("ID는 이메일 형식이어야 한다.", () => {
-    const wrapper = shallowMount(LoginForm);
+    const wrapper = shallowMount(LoginForm, {
+      data() {
+        return {
+          username: "test@abc.com",
+        };
+      },
+    });
     const idInput = wrapper.find("#username");
-    console.log(idInput.html());
+    console.log("input의 값", idInput.element.value);
+    console.log(wrapper.vm.isUsernameValid);
   });
 });
