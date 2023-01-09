@@ -1,10 +1,9 @@
-import { sum } from "./math";
+import { shallowMount } from "@vue/test-utils";
+import LoginForm from "./LoginForm";
 
-// sum(10, 20); // 30
-
-describe("math.js", () => {
-  test("10 + 20 = 30", () => {
-    const result = sum(10, 20);
-    expect(result).not.toBe(15);
+describe("LoginForm", () => {
+  test("컴포넌트가 마운팅되면 username이 존재하고 초기 값으로 설정되어 있어야 한다.", () => {
+    const wrapper = shallowMount(LoginForm);
+    expect(wrapper.vm.username).toBe("");
   });
 });
